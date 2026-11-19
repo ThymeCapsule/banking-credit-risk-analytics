@@ -1,28 +1,39 @@
-# Australian Corporate Credit Risk Analysis
+# Corporate Credit Risk Analysis
 
-A public-disclosure-based credit assessment of real ASX-listed businesses. The project uses company-reported FY2026 financials and transparent analyst calculations to assess leverage, debt-service capacity, cash generation, debt maturities, covenant compliance disclosures and downside resilience.
+A public-disclosure-based corporate credit portfolio assessing real businesses across luxury goods and natural resources. The work combines company-reported financial information with transparent analyst calculations to evaluate business risk, leverage, cash generation, liquidity, refinancing exposure and downside resilience.
 
-## Issuer universe
+## Current credit memorandum programme
+
+| Issuer | Listing | Sector | Status |
+|---|---|---|---|
+| LVMH | Euronext Paris: MC | Luxury goods | [FY2025 / H1 2026 credit memorandum](credit_memos/LVMH_FY2025_H1_2026_Credit_Committee_Memorandum.md) |
+| Richemont | SIX Swiss Exchange: CFR | Luxury goods | Planned |
+| BHP | ASX: BHP | Mining and natural resources | Planned |
+
+The three issuers were selected to compare different corporate credit characteristics: diversified luxury brand economics, jewellery and watchmaking exposure, and commodity-linked cash flows and capital intensity.
+
+## Existing ASX credit-screen dataset
+
+The repository also retains a separate public-disclosure credit-screen dataset for three Australian listed issuers:
 
 | Issuer | ASX code | Reporting period |
 |---|---|---|
-| SGH Limited | SGH | 30 June 2026 |
-| ALS Limited | ALQ | 31 March 2026 |
-| Lindsay Australia Limited | LAU | 30 June 2026 |
+| SGH Limited | SGH | FY2026 |
+| ALS Limited | ALQ | FY2026 |
+| Lindsay Australia Limited | LAU | FY2026 |
 
-All issuers are real businesses. The dataset contains reported financial information extracted from public disclosures. No synthetic borrower or company financial data is used.
+These legacy issuer datasets and scripts are separate from the new LVMH / Richemont / BHP memorandum programme. They use actual company disclosures; they are not synthetic borrower portfolios.
 
-## What the model does
+## Existing model capabilities
 
-- Reads sourced company financials from `data/asx_issuer_financials_fy2026.csv`.
-- Calculates profitability margins, cash conversion and selected debt-service ratios where the input definitions permit.
-- Uses company-reported net leverage and interest cover, preserving each issuer's stated denominator and definition.
-- Runs a transparent downside sensitivity: EBITDA falls 20% and finance costs rise 20%.
-- Includes FY2026 contractual debt maturity schedules in `data/debt_maturity_fy2026.csv`.
-- Separates disclosed covenant thresholds, reported compliance statements and analyst-calculated headroom in `data/covenant_disclosures_fy2026.csv`.
+- Calculates profitability margins, cash conversion and selected debt-service ratios where input definitions permit.
+- Preserves company-reported leverage and interest-cover definitions.
+- Runs transparent downside sensitivities using explicitly stated assumptions.
+- Includes sourced contractual debt maturity schedules.
+- Separates disclosed covenant thresholds, reported compliance statements and analyst-calculated headroom.
 - Produces CSV outputs for the base credit screen and downside scenario.
 
-## Run the model
+## Run the existing ASX model
 
 Requires Python 3.9+ and uses only the standard library.
 
@@ -38,14 +49,10 @@ Outputs:
 - `outputs/debt_maturity_summary.csv`
 - `outputs/covenant_summary.csv`
 
-## Debt maturity and covenant work
+## Credit analysis boundaries
 
-See [debt maturity and covenant analysis](docs/debt_maturity_and_covenants.md) for issuer-level observations, covenant definitions, headroom treatment and limitations. The first full [credit committee memorandum — ALS Limited](credit_memos/ALS_Limited_FY2026_Credit_Committee_Memorandum.md) includes a preliminary credit view, financial analysis, covenant assessment, downside case and diligence conditions.
+This is an **issuer-level corporate credit analysis**, not a bank's customer loan book or an internal credit rating. Public filings do not ordinarily disclose lender-specific facility exposure, borrower PD, LGD, EAD, internal risk grades or lender-certified covenant calculations. Those metrics are not fabricated.
 
-## Data and modelling boundaries
-
-This is an **issuer-level corporate credit screen**, not a bank's customer loan book or an internal credit rating. Public filings do not ordinarily disclose each lender's facility-level exposure, borrower PD, LGD, EAD or lender-assigned IFRS 9 stage. Those metrics are not invented.
-
-Reported leverage and interest coverage definitions differ between companies. The model retains those definitions and flags comparability limitations rather than forcing a false like-for-like comparison. Stress assumptions are analyst-selected sensitivities, not company forecasts.
+Reported leverage, interest coverage and free cash flow definitions can differ between issuers. The analysis preserves those definitions and flags comparability limitations rather than forcing false like-for-like comparisons. Analyst sensitivities are illustrative scenarios, not company forecasts.
 
 See [methodology](docs/methodology.md), [data dictionary](docs/data_dictionary.md) and [source register](docs/sources.md).
