@@ -1,37 +1,26 @@
 # Data dictionary
 
-File: `data/asx_issuer_financials_fy2026.csv`
-
-All company names are real ASX-listed issuers. Monetary amounts are in AUD millions unless otherwise stated.
+File: `data/asx_issuer_financials_fy2026.csv`. Monetary amounts are AUD millions unless stated otherwise.
 
 | Field | Definition |
 |---|---|
-| company | Legal issuer name |
-| asx_code | ASX ticker |
-| sector | Broad business sector |
-| reporting_period | Financial year-end period covered |
-| currency | Reporting currency |
-| unit | Unit used for financial amounts |
-| revenue_fy26 | FY26 reported revenue |
-| ebitda_fy26 | FY26 EBITDA as disclosed in the cited source |
-| ebit_fy26 | FY26 EBIT as disclosed |
-| npat_fy26 | FY26 net profit after tax |
-| net_debt_fy26 | Net debt, only where directly disclosed in the cited source |
-| company_reported_leverage | Leverage measure reported by the company; definitions may differ by issuer |
-| net_finance_cost_fy26 | Reported net finance/interest cost where available |
-| interest_cover_ebit_to_net_finance_cost | Analyst calculation: EBIT divided by net finance cost; only populated where source definitions support the calculation |
-| operating_cash_flow_fy26 | Operating cash flow, only where directly available in the source extract |
-| source_type | Type of public disclosure used |
-| source_url | Direct URL to the cited disclosure |
-| notes | Comparability caveats and calculation notes |
+| company / asx_code | Issuer name and ASX ticker |
+| sector | Broad issuer sector |
+| reporting_period_end | Financial year-end date |
+| currency / unit | Reporting currency and scale |
+| revenue | Reported FY2026 revenue |
+| ebitda_statutory | EBITDA from the financial statements or results presentation; check notes for issuer basis |
+| ebit_reported | Reported EBIT |
+| npat_statutory | Statutory NPAT |
+| net_debt_reported | Net debt where explicitly reported and directly available |
+| reported_net_leverage | Company-reported net leverage |
+| leverage_ebitda_basis | EBITDA denominator used for the leverage measure, where identified |
+| reported_interest_cover | Company-reported cover or a clearly labelled analyst calculation |
+| interest_cover_basis | Exact definition and provenance of the coverage ratio |
+| net_finance_cost | Net finance cost, with scope explained in notes |
+| operating_cash_flow | Net operating cash flow where directly reported |
+| borrowings / cash / lease_liabilities | Balance-sheet amounts where available |
+| source_url | Direct source URL |
+| notes | Definitions, scope and caveats |
 
-## Missing values
-
-An empty field means the relevant metric was not included in this initial extraction or was not sufficiently comparable. It does not mean zero. Do not impute missing figures without documenting the source and method.
-
-## Comparability
-
-- Financial year-ends differ: ALS reports to 31 March; SGH and Lindsay Australia report to 30 June.
-- Company-defined leverage metrics may use adjusted EBITDA, lease-adjusted debt or other definitions. Do not assume they are directly comparable.
-- EBIT/finance-cost coverage is an analyst calculation and is not necessarily the covenant interest cover used by lenders.
-- Reported EBITDA may be underlying or statutory depending on the company's disclosure. Refer to the notes and source register.
+Blank fields mean not available in the source extract; they do not mean zero. Do not replace missing data with estimates without adding a separately labelled derived field and documenting the formula.
