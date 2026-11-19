@@ -28,12 +28,15 @@ Requires Python 3.9+ and uses only the standard library.
 
 ```bash
 python src/credit_screen.py
+python src/debt_covenant_analysis.py
 python -m unittest discover -s tests
 ```
 
 Outputs:
 - `outputs/base_credit_screen.csv`
 - `outputs/downside_stress.csv`
+- `outputs/debt_maturity_summary.csv`
+- `outputs/covenant_summary.csv`
 
 ## Debt maturity and covenant work
 
