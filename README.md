@@ -10,7 +10,11 @@ A public-disclosure-based corporate credit portfolio assessing real businesses a
 | Richemont | SIX Swiss Exchange: CFR | Luxury goods | [FY2026 / H1 FY2027 credit memorandum](credit_memos/Richemont_FY2026_H1_FY2027_Credit_Committee_Memorandum.md) — completed |
 | BHP | ASX: BHP | Mining and natural resources | [FY2026 / Q1 FY2027 credit memorandum](credit_memos/BHP_FY2026_Q1_FY2027_Credit_Committee_Memorandum.md) — completed |
 
-The three issuers were selected to compare different corporate credit characteristics: diversified luxury brand economics, jewellery and watchmaking exposure, and commodity-linked cash flows and capital intensity.
+### Comparative analysis
+
+[Comparative Credit Analysis — LVMH, Richemont and BHP](credit_memos/Comparative_Credit_Analysis_LVMH_Richemont_BHP.md)
+
+The comparative paper evaluates business risk, balance-sheet flexibility, cash generation, capital allocation, downside sensitivities and preliminary lender posture across all three issuers. It explicitly flags differences in reporting periods, currencies and company-defined financial measures.
 
 ## Existing ASX credit-screen dataset
 
