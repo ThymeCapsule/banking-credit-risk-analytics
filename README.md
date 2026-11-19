@@ -1,54 +1,42 @@
 # Australian Corporate Credit Risk Analysis
 
-A public-disclosure-based credit analysis of real Australian listed businesses. The project extracts reported financial information, calculates transparent screening ratios and compares issuer-level credit risk indicators across sectors.
+A public-disclosure-based credit assessment of real ASX-listed businesses. The project uses company-reported FY2026 financials and transparent analyst calculations to assess leverage, debt-service capacity, cash generation and downside resilience.
 
-## Scope and data integrity
+## Issuer universe
 
-**This is an issuer-level credit analysis, not a bank's loan book.** Public annual reports disclose company financial statements, borrowings, liquidity, interest costs and selected credit-risk information. They generally do not disclose a lender's facility-level drawn exposure, internal PD, LGD, EAD, credit grade or IFRS 9 stage for each borrower.
+| Issuer | ASX code | Reporting period |
+|---|---|---|
+| SGH Limited | SGH | 30 June 2026 |
+| ALS Limited | ALQ | 31 March 2026 |
+| Lindsay Australia Limited | LAU | 30 June 2026 |
 
-Accordingly:
-- Company identities and reported figures relate to real ASX-listed businesses.
-- Reported metrics are transcribed from public FY2026 company disclosures.
-- Calculated ratios are labelled as analyst calculations and show their formulas.
-- Undisclosed lender-specific measures are left blank/not available; they are not fabricated.
-- No synthetic company names or synthetic borrower financials are used.
+All issuers are real businesses. The dataset contains reported financial information extracted from public disclosures. No synthetic borrower or company financial data is used.
 
-## Initial issuer universe
+## What the model does
 
-| Issuer | ASX code | Reporting period | Sector |
-|---|---|---|---|
-| SGH Limited | SGH | Year ended 30 June 2026 | Industrial services / diversified |
-| ALS Limited | ALQ | Year ended 31 March 2026 | Testing, inspection and certification |
-| Lindsay Australia Limited | LAU | Year ended 30 June 2026 | Transport and logistics |
+- Reads sourced company financials from `data/asx_issuer_financials_fy2026.csv`.
+- Calculates profitability margins, cash conversion and selected debt-service ratios where the input definitions permit.
+- Uses company-reported net leverage and interest cover, preserving each issuer's stated denominator and definition.
+- Runs a transparent downside sensitivity: EBITDA falls 20% and finance costs rise 20%.
+- Shows stressed leverage and interest cover only where a usable reported base metric exists.
+- Produces CSV outputs for the base credit screen and downside scenario.
 
-## Initial analytical coverage
+## Run the model
 
-- Revenue, EBITDA, EBIT and net profit
-- Net debt and company-reported leverage where disclosed
-- Interest coverage calculated from reported EBIT and net finance costs where comparable
-- Cash flow, liquidity and debt maturity indicators where disclosed
-- Credit-risk disclosures, receivables quality and impairment information
-- Sector concentration and comparative issuer screening
+Requires Python 3.9+ and uses only the standard library.
 
-## Repository structure
-
-```text
-.
-├── data/
-│   └── asx_issuer_financials_fy2026.csv
-├── docs/
-│   ├── data_dictionary.md
-│   ├── methodology.md
-│   └── sources.md
-└── README.md
+```bash
+python src/credit_screen.py
 ```
 
-## Important limitations
+Outputs:
+- `outputs/base_credit_screen.csv`
+- `outputs/downside_stress.csv`
 
-These issuers are operating companies, not a disclosed portfolio of bank borrowers. A public-company credit screen is not an IFRS 9 ECL model. PD and LGD estimation would require a defined default dataset, rating methodology, recovery evidence and forward-looking calibration. EAD requires actual facility and commitment information. IFRS 9 staging requires the lender's origination-date and reporting-date credit-risk information and SICR policy.
+## Data and modelling boundaries
 
-The analysis is educational and is not a credit rating, investment recommendation, lending decision or substitute for professional credit assessment.
+This is an **issuer-level corporate credit screen**, not a bank's customer loan book or an internal credit rating. Public filings do not ordinarily disclose each lender's facility-level exposure, borrower PD, LGD, EAD or lender-assigned IFRS 9 stage. Those metrics are not invented.
 
-## Sources
+Reported leverage and interest coverage definitions differ between companies. The model retains those definitions and flags comparability limitations rather than forcing a false like-for-like comparison. Stress assumptions are analyst-selected sensitivities, not company forecasts.
 
-See [source register](docs/sources.md) and [methodology](docs/methodology.md).
+See [methodology](docs/methodology.md), [data dictionary](docs/data_dictionary.md) and [source register](docs/sources.md).
