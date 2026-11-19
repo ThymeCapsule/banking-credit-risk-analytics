@@ -40,7 +40,7 @@ Outputs:
 
 ## Debt maturity and covenant work
 
-See [debt maturity and covenant analysis](docs/debt_maturity_and_covenants.md) for issuer-level observations, covenant definitions, headroom treatment and limitations.
+See [debt maturity and covenant analysis](docs/debt_maturity_and_covenants.md) for issuer-level observations, covenant definitions, headroom treatment and limitations. The first full [credit committee memorandum — ALS Limited](credit_memos/ALS_Limited_FY2026_Credit_Committee_Memorandum.md) includes a preliminary credit view, financial analysis, covenant assessment, downside case and diligence conditions.
 
 ## Data and modelling boundaries
 
