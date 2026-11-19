@@ -1,0 +1,4 @@
+company,asx_code,scenario,base_net_leverage_x,stressed_net_leverage_x,base_interest_cover_x,stressed_interest_cover_x,assumption
+SGH Limited,SGH,"EBITDA -20%; finance costs +20%; net debt held constant",1.80,2.25,,,"Mechanical sensitivity only; not a forecast, probability or covenant test."
+ALS Limited,ALQ,"EBITDA -20%; finance costs +20%; net debt held constant",1.50,1.88,13.50,9.00,"Mechanical sensitivity only; not a forecast, probability or covenant test."
+Lindsay Australia Limited,LAU,"EBITDA -20%; finance costs +20%; net debt held constant",1.92,2.40,5.93,3.95,"Mechanical sensitivity only; not a forecast, probability or covenant test."
