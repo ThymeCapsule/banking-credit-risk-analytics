@@ -1,6 +1,6 @@
 # Australian Corporate Credit Risk Analysis
 
-A public-disclosure-based credit assessment of real ASX-listed businesses. The project uses company-reported FY2026 financials and transparent analyst calculations to assess leverage, debt-service capacity, cash generation and downside resilience.
+A public-disclosure-based credit assessment of real ASX-listed businesses. The project uses company-reported FY2026 financials and transparent analyst calculations to assess leverage, debt-service capacity, cash generation, debt maturities, covenant compliance disclosures and downside resilience.
 
 ## Issuer universe
 
@@ -18,7 +18,8 @@ All issuers are real businesses. The dataset contains reported financial informa
 - Calculates profitability margins, cash conversion and selected debt-service ratios where the input definitions permit.
 - Uses company-reported net leverage and interest cover, preserving each issuer's stated denominator and definition.
 - Runs a transparent downside sensitivity: EBITDA falls 20% and finance costs rise 20%.
-- Shows stressed leverage and interest cover only where a usable reported base metric exists.
+- Includes FY2026 contractual debt maturity schedules in `data/debt_maturity_fy2026.csv`.
+- Separates disclosed covenant thresholds, reported compliance statements and analyst-calculated headroom in `data/covenant_disclosures_fy2026.csv`.
 - Produces CSV outputs for the base credit screen and downside scenario.
 
 ## Run the model
@@ -33,6 +34,10 @@ python -m unittest discover -s tests
 Outputs:
 - `outputs/base_credit_screen.csv`
 - `outputs/downside_stress.csv`
+
+## Debt maturity and covenant work
+
+See [debt maturity and covenant analysis](docs/debt_maturity_and_covenants.md) for issuer-level observations, covenant definitions, headroom treatment and limitations.
 
 ## Data and modelling boundaries
 
