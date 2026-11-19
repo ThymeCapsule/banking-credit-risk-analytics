@@ -6,8 +6,8 @@ A public-disclosure-based corporate credit portfolio assessing real businesses a
 
 | Issuer | Listing | Sector | Status |
 |---|---|---|---|
-| LVMH | Euronext Paris: MC | Luxury goods | [FY2025 / H1 2026 credit memorandum](credit_memos/LVMH_FY2025_H1_2026_Credit_Committee_Memorandum.md) |
-| Richemont | SIX Swiss Exchange: CFR | Luxury goods | Planned |
+| LVMH | Euronext Paris: MC | Luxury goods | [FY2025 / H1 2026 credit memorandum](credit_memos/LVMH_FY2025_H1_2026_Credit_Committee_Memorandum.md) — completed |
+| Richemont | SIX Swiss Exchange: CFR | Luxury goods | [FY2026 / H1 FY2027 credit memorandum](credit_memos/Richemont_FY2026_H1_FY2027_Credit_Committee_Memorandum.md) — completed |
 | BHP | ASX: BHP | Mining and natural resources | Planned |
 
 The three issuers were selected to compare different corporate credit characteristics: diversified luxury brand economics, jewellery and watchmaking exposure, and commodity-linked cash flows and capital intensity.
