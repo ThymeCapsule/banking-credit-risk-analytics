@@ -27,6 +27,7 @@ Requires Python 3.9+ and uses only the standard library.
 
 ```bash
 python src/credit_screen.py
+python -m unittest discover -s tests
 ```
 
 Outputs:
