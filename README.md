@@ -14,6 +14,12 @@ A public-disclosure-based corporate credit portfolio assessing real businesses a
 
 [Comparative Credit Analysis — LVMH, Richemont and BHP](credit_memos/Comparative_Credit_Analysis_LVMH_Richemont_BHP.md)
 
+### Excel credit model
+
+[Download the Comparative Corporate Credit Model — LVMH, Richemont and BHP](Comparative_Corporate_Credit_Model_LVMH_Richemont_BHP-2.xlsx)
+
+The workbook contains reported issuer inputs, editable downside assumptions, formula-driven credit sensitivities, a comparative credit view and a source register. It is an issuer-level screening tool; it is not an internal bank rating or an IFRS 9 expected-credit-loss model.
+
 The comparative paper evaluates business risk, balance-sheet flexibility, cash generation, capital allocation, downside sensitivities and preliminary lender posture across all three issuers. It explicitly flags differences in reporting periods, currencies and company-defined financial measures.
 
 ## Existing ASX credit-screen dataset
