@@ -1,47 +1,49 @@
-# Methodology — public-company credit screening
+# Credit screening methodology
 
-## 1. Objective
+## Purpose and scope
 
-Assess the capacity of real Australian listed businesses to service debt using publicly disclosed financial information. This is a company-level credit screening exercise, not a reconstruction of confidential bank facilities or internal borrower ratings.
+The model screens the financial resilience of real ASX-listed issuers using public FY2026 disclosures. It is not a bank internal rating, borrower-level PD model or IFRS 9 ECL engine.
 
-## 2. Source hierarchy
+## Input hierarchy
 
 1. Audited annual financial statements and notes.
-2. ASX Appendix 4E and company results announcements.
-3. Investor presentations, used with clear identification of non-IFRS measures.
+2. ASX results announcements and investor presentations.
+3. Company-defined non-IFRS measures, only where explicitly labelled.
 
-Every quantitative observation must be linked to a source URL and reporting period. Where a value is not available or definitions are unclear, leave it blank and explain the limitation.
+Every issuer input has a source URL and notes. Company-defined measures are retained as reported. Statutory and adjusted metrics are not silently mixed.
 
-## 3. Core screening measures
+## Base ratios
 
-- Revenue growth: current-period revenue / prior-period revenue - 1.
-- EBITDA margin: EBITDA / revenue.
-- EBIT margin: EBIT / revenue.
-- Net leverage: use the issuer's disclosed net debt / EBITDA only where its definition is documented.
-- Interest cover: EBIT / net finance costs, only where both inputs use compatible definitions.
-- Cash conversion: operating cash flow / EBITDA, only where the cash flow definition and EBITDA basis are comparable.
+- EBITDA margin = reported EBITDA / revenue.
+- EBIT margin = reported EBIT / revenue.
+- Statutory NPAT margin = statutory NPAT / revenue.
+- Operating cash flow conversion = operating cash flow / EBITDA, only shown as a screening indicator and interpreted cautiously.
+- Net leverage = company-reported net leverage. The underlying EBITDA denominator is documented separately where known.
+- Interest cover = company-reported interest cover where available. If not reported, an analyst calculation is shown only when its numerator and denominator are explicitly identified.
 
-These are screening ratios, not a formal rating methodology. Interpret them alongside business cyclicality, customer concentration, liquidity, debt maturity, security, covenants, foreign exchange and contingent liabilities.
+## Downside sensitivity
 
-## 4. PD, LGD and EAD boundaries
+The illustrative downside scenario applies:
+- EBITDA reduction: 20%.
+- Finance-cost increase: 20%.
+- Net debt held constant.
+- No management actions, asset sales, refinancing, tax effects or working-capital offsets.
 
-Public financial statements do not normally disclose the lender's borrower-level:
-- Probability of default (PD) or internal risk grade;
-- Loss given default (LGD) or collateral recovery assumptions;
-- Exposure at default (EAD), including committed undrawn facilities;
-- Origination-date credit risk and reporting-date SICR assessment.
+Stressed leverage = base reported leverage / (1 - EBITDA decline), assuming the reported leverage denominator declines in line with EBITDA and net debt is unchanged.
 
-Do not label a proxy as an actual bank PD, LGD, EAD or IFRS 9 stage. A future analytical model may develop an explicitly labelled proxy score, but it must be kept separate from reported data and supported by a documented calibration approach.
+Stressed interest cover = base interest cover × (1 - EBITDA decline) / (1 + finance-cost increase).
 
-## 5. IFRS 9 boundary
+These are mechanical sensitivities, not forecasts or probabilities. The scenario does not replace a full integrated cash flow, debt maturity, liquidity and covenant model.
 
-IFRS 9 ECL is measured by a lender on its financial assets and commitments. A corporate issuer's own annual report may disclose ECL on its trade receivables, but that is not the same as the lender's ECL on loans to that company. This project will distinguish issuer-reported receivables impairment from hypothetical lender-side credit modelling.
+## Interpretation guardrails
 
-## 6. Quality controls
+- SGH's 1.8x is adjusted net debt / EBITDA as disclosed by the company.
+- ALS's 1.5x is net debt / adjusted underlying EBITDA on a pre-IFRS16 basis. Its 13.5x reported interest cover uses adjusted underlying EBITDA divided by net finance expense on loans and borrowings.
+- Lindsay Australia's 1.92x is company-reported net leverage. The 5.93x model base cover is an analyst calculation using reported EBITDA divided by segment net finance costs; it is not a company covenant metric.
+- Company leverage definitions are not perfectly comparable.
+- For Lindsay Australia, borrowings less cash exclude lease liabilities; do not equate this arithmetic net bank debt with company-reported net leverage.
+- No company-specific PD, LGD, EAD, internal rating or lender-side IFRS 9 stage is inferred.
 
-- Preserve source units and reporting dates.
-- Record whether each figure is statutory, underlying or company-adjusted.
-- Recalculate ratios from disclosed inputs and retain formulas.
-- Never convert missing disclosures to zero.
-- Flag cross-company metric-definition differences.
-- Update the source register when new annual or half-year reports are added.
+## Model limitations
+
+The current issuer set is small and spans different industries and reporting dates. The scorecard is a screening aid, not a statistically calibrated rating model. A fuller credit memorandum should incorporate debt maturity ladders, committed facilities, covenant headroom, security, refinancing risk, working capital, customer concentration, industry outlook and management actions.
