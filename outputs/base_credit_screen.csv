@@ -1,0 +1,4 @@
+company,asx_code,reporting_period_end,revenue_aud_m,ebitda_aud_m,ebit_aud_m,statutory_npat_aud_m,ebitda_margin_pct,ebit_margin_pct,npat_margin_pct,operating_cash_flow_aud_m,ocf_to_ebitda_pct,company_reported_net_leverage_x,interest_cover_x,interest_cover_definition,source_url
+SGH Limited,SGH,2026-06-30,10564.0,2084.0,1554.0,655.0,19.73,14.71,6.20,2072.0,99.42,1.80,,,
+ALS Limited,ALQ,2026-03-31,3320.1,778.3,524.9,318.7,23.44,15.81,9.60,485.7,62.41,1.50,13.50,"Adjusted underlying EBITDA / net finance expense on loans and borrowings; company-reported",https://www.alsglobal.com/en-in/news-and-publications/2026/05/als-limited-delivers-record-fy26-result
+Lindsay Australia Limited,LAU,2026-06-30,1072.7,123.9,54.5,22.9,11.55,5.08,2.13,75.2,60.70,1.92,5.93,"Analyst calculation: reported EBITDA / segment net finance costs; not company covenant cover",https://financialfilings.com/filings/lindsay-australia-limited/annual-report/2026/57389127/
